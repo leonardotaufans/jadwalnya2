@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:jadwalnya/screen/auth/auth_screen.dart';
 import 'package:jadwalnya/screen/home/dashboard_screen.dart';
@@ -27,15 +28,15 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (_) => SplashScreen(),
-        'dashboard': (_) => DashboardScreen(),
-        'auth': (_) => AuthScreen(),
+        DashboardScreen.NAME: (_) => DashboardScreen(),
+        AuthScreen.NAME: (_) => AuthScreen(),
       },
     );
   }
 }
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({Key key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -44,7 +45,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> changePage() async {
     await Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, 'auth'); //todo: Remove hardcoding
+      // Navigator.pushReplacementNamed(context, 'auth'); //todo: Remove hardcoding
+      Navigator.pushReplacementNamed(context, DashboardScreen.NAME);
     });
   }
 

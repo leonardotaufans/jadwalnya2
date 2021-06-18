@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatefulWidget {
+  static const NAME = 'auth';
   const AuthScreen({Key? key}) : super(key: key);
 
   @override
