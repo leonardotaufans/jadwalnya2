@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   sqflite:
   path:
+  full_screen_image_null_safe:
   path_provider:
   carousel_slider:
 

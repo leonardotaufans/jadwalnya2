@@ -112,10 +112,10 @@ class _ExpandableFabState extends State<ExpandableFab>
           opacity: _open ? 0.0 : 1.0,
           curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
           duration: const Duration(milliseconds: 250),
-          child: FloatingActionButton.extended(
+          child: FloatingActionButton(
             onPressed: _toggle,
-            label: Text('Create New...'),
-            icon: const Icon(Icons.add),
+            tooltip: 'Create New...',
+            child: const Icon(Icons.add),
           ),
         ),
       ),

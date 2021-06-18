@@ -44,7 +44,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> changePage() async {
-    await Future.delayed(Duration(seconds: 3), () {
+    await Future.delayed(Duration(seconds: 1), () {
       // Navigator.pushReplacementNamed(context, 'auth'); //todo: Remove hardcoding
       Navigator.pushReplacementNamed(context, DashboardScreen.NAME);
     });

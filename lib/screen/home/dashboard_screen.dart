@@ -13,13 +13,28 @@ import 'fragments/dashboard_fragments.dart';
 // import 'package:carou'
 class DashboardScreen extends StatefulWidget {
   static const NAME = 'dashboard';
+
   final drawerItems = [
-    new DrawerItem(title: 'Dashboard', icon: Icon(Icons.dashboard)),
-    new DrawerItem(title: 'Announcement', icon: Icon(Icons.announcement)),
-    new DrawerItem(title: 'Schedule', icon: Icon(Icons.schedule)),
-    new DrawerItem(title: 'Assignment', icon: Icon(Icons.assignment)),
-    new DrawerItem(title: 'Quiz', icon: Icon(Icons.architecture)),
-    new DrawerItem(title: 'Manage Class', icon: Icon(Icons.class_)),
+    new DrawerItem(
+        title: 'Dashboard', icon: Icon(Icons.dashboard), data: new Dashboard()),
+    new DrawerItem(
+        title: 'Announcement',
+        icon: Icon(Icons.announcement),
+        data: new Announcement()),
+    new DrawerItem(
+        title: 'Schedule', icon: Icon(Icons.schedule), data: new Schedule()),
+    new DrawerItem(
+        title: 'Assignment',
+        icon: Icon(Icons.assignment),
+        data: new Assignment()),
+    new DrawerItem(
+        title: 'Quiz', icon: Icon(Icons.architecture), data: new Quiz()),
+    new DrawerItem(
+        title: 'Manage Class',
+        icon: Icon(Icons.class_),
+        data: new ManageClass()),
+    new DrawerItem(
+        title: 'Settings', icon: Icon(Icons.settings), data: new Settings()),
   ];
 
   @override
@@ -39,31 +54,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
     setState(() => _currentCount = index);
     bool _isMobile = MediaQuery.of(context).size.width < 650;
 
-    if (_isMobile) {
-      /// We don't want to pop if the drawer is fixed.
-      Navigator.of(context).pop();
-    }
+    /// We don't want to pop if the drawer is fixed.
+    _isMobile ?? Navigator.of(context).pop();
   }
 
-  _getDrawerFragments(int pos) {
-    switch (pos) {
-      case 0:
-        return new Dashboard();
-      case 1:
-        return new Announcement();
-      case 2:
-        return new Schedule();
-      case 3:
-        return new Assignment();
-      case 4:
-        return new Quiz();
-      case 5:
-        return new ManageClass();
-      default:
-        print(
-            '_DashboardScreenState._getDrawerFragments something break on switch case!');
-    }
-  }
+  /// Get which fragment is currently being (and will be) opened
+  Widget _getDrawerFragments(int pos) => widget.drawerItems[pos].data;
 
   List<Widget> drawerOptions(context) {
     List<Widget> drawerItems = [];
@@ -179,9 +175,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   /// Build Left Drawer
   Card buildDrawer(BuildContext context, bool isMobile) {
     return Card(
-      elevation: 8,
+      elevation: 4,
       child: Container(
-        height: isMobile ? 400 : 620,
+        // height: isMobile ? 400 : 620,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(topRight: Radius.circular(16.0))),
         child: ListView(
