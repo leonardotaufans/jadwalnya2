@@ -99,6 +99,7 @@ class _DashboardState extends State<Dashboard> {
           child: CarouselSlider.builder(
               itemCount: 8,
               itemBuilder: (context, index, _) {
+                //todo: add onTap behavior
                 return AnnouncementCard(
                   name: 'Leonardo Taufan',
                   uid: '@Meowrenzi#3201',

@@ -28,7 +28,10 @@ dependencies:
   full_screen_image_null_safe:
   path_provider:
   carousel_slider:
-
+  lottie: any
+  curved_navigation_bar: ^1.0.1
+  flutter_speed_dial: ^4.1.0
+  percent_indicator: ^3.0.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -57,6 +60,7 @@ flutter:
     - assets/images/2.0/city.jpg
     - assets/images/3.0/city.jpg
     - assets/images/4.0/city.jpg
+    - assets/lottie/geometric_back.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -1,5 +1,7 @@
 import 'package:jadwalnya/model/assignment.dart';
 
+import 'score.dart';
+
 class Schedule {
   final String id;
   final String name;
@@ -9,10 +11,22 @@ class Schedule {
   final String? color, altName;
   final String? imageUri;
   final List<Assignment>? assignment;
-  Schedule({required this.id, required this.name, required this.day,
-            required this.startTime, required this.endTime,
-            required this.location,
-            this.color, this.altName, this.imageUri, this.assignment}); /// If there is imageUri, no need for color/altName
+  final List<Score>? scores;
+
+  Schedule(
+      {required this.id,
+      required this.name,
+      required this.day,
+      required this.startTime,
+      required this.endTime,
+      required this.location,
+      this.color,
+      this.altName,
+      this.imageUri,
+      this.assignment,
+      this.scores});
+
+  /// If there is imageUri, no need for color/altName
 
   getAssignmentAmount() {
     return assignment!.length;
