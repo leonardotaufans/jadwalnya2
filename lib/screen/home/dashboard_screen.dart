@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -49,7 +50,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Width: ${MediaQuery.of(context).size.width}'),
+        title: Text('${widget.drawerItems[_index].title}'),
       ),
       body: Flex(direction: Axis.horizontal, children: [
         /// Side Navigation Bar if used
@@ -143,7 +144,7 @@ class SpeedDialFab extends StatelessWidget {
     return SpeedDial(
       buttonSize: 48,
       label: Text('Create new...'),
-      animatedIcon: AnimatedIcons.menu_close,
+      animatedIcon: AnimatedIcons.add_event,
       children: [
         SpeedDialChild(
             onTap: () {},
