@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Jadwalnya',
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        accentColor: Colors.green.shade400
-      ),
+          brightness: Brightness.dark, accentColor: Colors.green.shade400),
       initialRoute: '/',
       routes: {
         '/': (_) => SplashScreen(),
