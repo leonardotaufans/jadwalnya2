@@ -10,7 +10,7 @@ class Schedule {
   final String location;
   final String? color, altName;
   final String? imageUri;
-  final List<Assignment>? assignment;
+  final List<Assignment>? assignments;
   final List<Score>? scores;
 
   Schedule(
@@ -23,12 +23,16 @@ class Schedule {
       this.color,
       this.altName,
       this.imageUri,
-      this.assignment,
+      this.assignments,
       this.scores});
 
   /// If there is imageUri, no need for color/altName
 
   getAssignmentAmount() {
-    return assignment!.length;
+    if (assignments!.isEmpty || assignments == null) {
+      return 0;
+    } else {
+      return assignments!.length;
+    }
   }
 }

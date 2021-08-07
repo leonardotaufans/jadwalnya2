@@ -12,4 +12,6 @@ class Assignment {
   Assignment({required this.id, required this.name, required this.desc,
     required this.dueDate, required this.scheduleId, required this.isFinished,
     required this.expiryDate, required this.uploaderId, this.imageUri,}); /// Image Uri is not required. Duh.
+///
+
 }
